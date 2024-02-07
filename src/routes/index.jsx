@@ -1,13 +1,12 @@
-import { createBrowserRouter } from "react-router-dom"
-import RootLayout from "../layout/RootLayout"
-import Cars from "../pages/Cars/Cars"
-import { Hello } from "../pages/Hello/Hello"
+import { createBrowserRouter } from "react-router-dom";
+import RootLayout from "../layout/RootLayout";
+import Cars from "../pages/Cars/Cars";
+import { Hello } from "../pages/Hello/Hello";
 
 export const router = createBrowserRouter([
   {
     path: "/oncar",
     element: <RootLayout />,
-
     children: [
       {
         path: "/oncar/cars",
@@ -19,4 +18,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-])
+]);

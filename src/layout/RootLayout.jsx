@@ -1,19 +1,18 @@
-import React from "react"
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 const RootLayout = () => {
   return (
     <>
       <header>
-        <h1>Teste</h1>
-        <Link to={"/oncar"}>Home</Link>
+        <h1>Page inicial</h1>
       </header>
-      <Outlet />
-      <footer>
-        <p>footer</p>
-      </footer>
+      <section>
+        {/* INICIO - Renderização das páginas */}
+        <Outlet />
+        {/* FIM - Renderização das páginas */}
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;
