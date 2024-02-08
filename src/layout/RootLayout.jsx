@@ -8,7 +8,9 @@ const RootLayout = () => {
     <div>
       <Navbar />
       {/* INÍCIO - Renderização das páginas */}
-      <Outlet />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
       {/* FIM - Renderização das páginas */}
       <Footer />
     </div>

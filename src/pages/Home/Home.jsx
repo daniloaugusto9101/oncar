@@ -6,12 +6,12 @@ const Home = () => {
 
   if (cars) {
     return (
-      <div>
+      <main>
         <h1>Home</h1>
         {cars.map((obj, i) => (
           <p key={i}>{obj.title}</p>
         ))}
-      </div>
+      </main>
     );
   }
 };
