@@ -9,8 +9,8 @@ const useFethCars = () => {
       .then((resp) => {
         setCars(resp);
       })
-      .catch((erro) => {
-        console.error("Algo deu errado: ", erro);
+      .catch((error) => {
+        console.error("Algo deu errado: ", error);
       });
   }, []);
 
