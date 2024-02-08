@@ -1,18 +1,8 @@
 import React from "react";
-import CarsServices from "../../services/CarsServices";
+import useFethCars from "../../hooks/useFethCars";
 
 const Home = () => {
-  const [cars, setCars] = React.useState([]);
-
-  React.useEffect(() => {
-    CarsServices.getCars()
-      .then((resp) => {
-        setCars(resp);
-      })
-      .catch((erro) => {
-        console.error("Algo deu errado: ", erro);
-      });
-  }, []);
+  const cars = useFethCars();
 
   if (cars) {
     return (
