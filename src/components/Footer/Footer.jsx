@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="py-5 md:py-10 border-t-2 flex flex-col md:flex-row items-center justify-center text-2xl gap-1 mt-20">
+    <div className="py-5 md:py-10 border-t-2 flex flex-col md:flex-row items-center justify-center text-2xl gap-1">
       <p className="">desenvolvido por</p>
       <p className="flex items-center  md:text-md">
         <IoIosRocket className="text-red-700" />
