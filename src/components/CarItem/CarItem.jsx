@@ -8,12 +8,12 @@ const CarItem = ({ car }) => {
   return (
     <div className="bg-white rounded-md shadow-md shadow-gray-300 overflow-hidden">
       <div>
-        <img src={url} alt="Foto Cruze LT Sedan" className=" block" />
+        <img src={car.img} alt="Foto Cruze LT Sedan" className=" block" />
       </div>
       <div>
         <div className="p-4 flex flex-col gap-2">
           <p className="text-2xl">{car.modelo}</p>
-          <p>Chevrolet</p>
+          <p>{car.marca}</p>
           <div className="flex gap-5">
             <p className="flex items-center gap-1">
               <FaRegCalendarAlt />
@@ -21,7 +21,7 @@ const CarItem = ({ car }) => {
             </p>
             <p className="flex items-center gap-1">
               <IoMdSpeedometer />
-              {car.totKM} km
+              {car.totkm} km
             </p>
           </div>
         </div>
@@ -29,7 +29,7 @@ const CarItem = ({ car }) => {
           <p>
             R$
             <span className="text-2xl text-blue-600 font-bold">
-              {car.preco}
+              {car.valor}
             </span>
           </p>
           <Link

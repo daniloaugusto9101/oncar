@@ -1,12 +1,8 @@
 import axios from "axios";
 // import env from "./env";
 
-// const defaultEnv = env.production.theMovieDBToken;
 const api = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/",
-  //   headers: {
-  //     Authorization: `Bearer ${defaultEnv}`,
-  //   },
+  baseURL: "https://oncar-api-cyan.vercel.app/api/v1",
 });
 
 export default api;
