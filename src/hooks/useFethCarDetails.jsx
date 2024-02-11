@@ -1,20 +1,20 @@
 import React from "react";
 import CarsServices from "../services/CarsServices";
 
-const useFethCars = () => {
-  const [cars, setCars] = React.useState([]);
+const useFethCarDetails = (idCar) => {
+  const [car, setCar] = React.useState({});
 
   React.useEffect(() => {
-    CarsServices.getCars()
+    CarsServices.getCarDetails(idCar)
       .then((resp) => {
-        setCars(resp);
+        setCar(resp);
       })
       .catch((err) => {
         console.error(`Algo deu errado: ${err}`);
       });
-  }, []);
+  }, [idCar]);
 
-  return cars;
+  return car;
 };
 
-export default useFethCars;
+export default useFethCarDetails;

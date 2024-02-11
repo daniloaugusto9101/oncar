@@ -1,5 +1,4 @@
 import React from "react";
-import url from "../../assets/img/carro.webp";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdSpeedometer } from "react-icons/io";
 import { Link } from "react-router-dom";
