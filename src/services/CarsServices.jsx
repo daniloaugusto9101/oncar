@@ -9,7 +9,13 @@ const getCarDetails = async (id) => {
   return data;
 };
 
+const postCar = async (car) => {
+  const { data } = await api.post(`/cars/`, car);
+  return data;
+};
+
 export default {
   getCars,
   getCarDetails,
+  postCar,
 };
