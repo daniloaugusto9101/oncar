@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFethCarDetails from "../../hooks/useFethCarDetails";
-import BtnBin from "../../components/BtnBin/BtnBin";
-import BtnEdit from "../../components/BtnEdit";
+import BtnDeleteCar from "../../components/BtnDeleteCar";
 import Btnfinance from "../../components/Btnfinance";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdSpeedometer } from "react-icons/io";
@@ -10,16 +9,19 @@ import { IoMdSpeedometer } from "react-icons/io";
 const CarDetails = () => {
   const { carId } = useParams();
   const { data: car } = useFethCarDetails(carId);
+
   if (car) {
     return (
-      <div className="md:flex">
-        <div className="basis-1/2">
-          <img src={car.img} alt={`Fotos do carro ${car.marca}`} />
+      <div className="md:flex px-2">
+        <div className="basis-1/2 h-96">
+          <img
+            src={car.img}
+            className="block overflow-hidden w-full h-full object-cover"
+          />
         </div>
         <div className="p-4 basis-1/2">
           <div className="flex gap-2">
-            <BtnBin />
-            <BtnEdit />
+            <BtnDeleteCar carId={carId} />
           </div>
           <div className="flex flex-col gap-2 mt-4">
             <p className="text-2xl">{car.modelo}</p>

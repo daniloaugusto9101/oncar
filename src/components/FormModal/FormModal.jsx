@@ -1,17 +1,10 @@
 import React from "react";
-import CarsServices from "../../services/CarsServices";
-// import usePostCar from "../../hooks/usePostCar";
+import usePostCar from "../../hooks/usePostCars";
+import { GlobalCars } from "../../storage/GlobalCars";
 
-const FormModal = ({ isOpen, setIsOpen }) => {
-  const postCar = async (car) => {
-    try {
-      const response = await CarsServices.postCar(car);
-      return response;
-    } catch (error) {
-      console.error(`An error occurred while posting the car: ${error}`);
-      throw error;
-    }
-  };
+const FormModal = () => {
+  const { postCar } = usePostCar();
+  const { isOpen, setIsOpen } = React.useContext(GlobalCars);
 
   const [data, setData] = React.useState({
     img: "",

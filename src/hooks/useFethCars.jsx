@@ -1,7 +1,7 @@
 import React from "react";
 import CarsServices from "../services/CarsServices";
 
-const useFethCars = () => {
+const useFethCars = (refreshKey) => {
   const [cars, setCars] = React.useState([]);
 
   React.useEffect(() => {
@@ -12,7 +12,7 @@ const useFethCars = () => {
       .catch((err) => {
         console.error(`Algo deu errado: ${err}`);
       });
-  }, []);
+  }, [refreshKey]);
 
   return cars;
 };

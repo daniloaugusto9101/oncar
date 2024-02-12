@@ -14,8 +14,14 @@ const postCar = async (car) => {
   return data;
 };
 
+const deleteCar = async (idCar) => {
+  const { data } = await api.delete(`/cars/${idCar}`);
+  return data;
+};
+
 export default {
   getCars,
   getCarDetails,
   postCar,
+  deleteCar,
 };

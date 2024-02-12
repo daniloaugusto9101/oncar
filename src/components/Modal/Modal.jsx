@@ -1,8 +1,10 @@
 import React from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
 import FormModal from "../FormModal/FormModal";
+import { GlobalCars } from "../../storage/GlobalCars";
 
-const Modal = ({ isOpen, setIsOpen }) => {
+const Modal = () => {
+  const { isOpen, setIsOpen } = React.useContext(GlobalCars);
   if (isOpen) {
     return (
       <div className="fixed top-0 right-0 bottom-0 left-0 bg-black flex justify-center items-center bg-opacity-85">

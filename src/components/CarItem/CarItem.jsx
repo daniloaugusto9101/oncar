@@ -6,8 +6,11 @@ import { Link } from "react-router-dom";
 const CarItem = ({ car }) => {
   return (
     <div className="bg-white rounded-md shadow-md shadow-gray-300 overflow-hidden">
-      <div>
-        <img src={car.img} alt="Foto Cruze LT Sedan" className=" block" />
+      <div className="h-48">
+        <img
+          src={car.img}
+          className="block overflow-hidden w-full h-full object-cover"
+        />
       </div>
       <div>
         <div className="p-4 flex flex-col gap-2">

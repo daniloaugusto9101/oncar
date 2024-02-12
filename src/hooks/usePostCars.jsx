@@ -1,18 +1,17 @@
 import React from "react";
 import CarsServices from "../services/CarsServices";
 
-const usePostCar = (car) => {
+const usePostCar = () => {
   const postCar = async (car) => {
     try {
       const response = await CarsServices.postCar(car);
       return response;
     } catch (error) {
-      console.error(`An error occurred while posting the car: ${error}`);
-      throw error;
+      console.error(`Ocorreu um erro: ${error}`);
     }
   };
 
-  return postCar;
+  return { postCar };
 };
 
 export default usePostCar;
