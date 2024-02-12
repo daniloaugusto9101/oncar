@@ -1,10 +1,8 @@
 import React from "react";
 import usePostCar from "../../hooks/usePostCars";
-import { GlobalCars } from "../../storage/GlobalCars";
 
 const FormModal = () => {
-  const { postCar } = usePostCar();
-  const { isOpen, setIsOpen } = React.useContext(GlobalCars);
+  const { postCar, message, setMessage } = usePostCar();
 
   const [data, setData] = React.useState({
     img: "",
@@ -23,12 +21,13 @@ const FormModal = () => {
   const sendCar = async (e) => {
     e.preventDefault();
     postCar(data);
-    setIsOpen(!isOpen);
+    setMessage("Carro cadastrado com sucesso!");
   };
 
   return (
     <form onSubmit={sendCar}>
       <div className="flex flex-col gap-4">
+        {message && "carro cadastrado com sucesso"}
         <div>
           <p className="mb-2">
             URL imagen

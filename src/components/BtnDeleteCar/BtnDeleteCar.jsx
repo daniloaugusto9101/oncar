@@ -1,7 +1,9 @@
 import { RiDeleteBin5Line } from "react-icons/ri";
 import CarsServices from "../../services/CarsServices";
+import { useNavigate } from "react-router-dom";
 
 const BtnDeleteCar = ({ carId }) => {
+  const navigate = useNavigate();
   const deleteCar = async (id) => {
     try {
       const response = await CarsServices.deleteCar(id);
@@ -14,6 +16,7 @@ const BtnDeleteCar = ({ carId }) => {
   const handleClick = () => {
     console.log("clicou, id", carId);
     deleteCar(carId);
+    navigate("/oncar/");
   };
   return (
     <div

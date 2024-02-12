@@ -1,1 +1,1 @@
-export { default } from "./FormModal";
+export { defaul } from "./FormModal";
