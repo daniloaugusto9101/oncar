@@ -6,7 +6,7 @@ const Btnfinance = () => {
       <span className=" text-xlrounded-md">
         <AiOutlineDollarCircle />
       </span>
-      <p className="">Simular financiameto</p>
+      <p className="">Simular financiamento</p>
     </div>
   );
 };
