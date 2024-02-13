@@ -16,7 +16,7 @@ const Modal = () => {
               onClick={() => setIsOpen(!isOpen)}
             />
           </div>
-          <FormModal isOpen={isOpen} setIsOpen={setIsOpen} />
+          <FormModal />
         </div>
       </div>
     );

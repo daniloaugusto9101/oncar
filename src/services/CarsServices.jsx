@@ -19,9 +19,15 @@ const deleteCar = async (idCar) => {
   return data;
 };
 
+const postFinance = async (cliente) => {
+  const { data } = await api.post(`/cars/finance`, cliente);
+  return data;
+};
+
 export default {
   getCars,
   getCarDetails,
   postCar,
   deleteCar,
+  postFinance,
 };

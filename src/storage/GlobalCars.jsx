@@ -4,12 +4,9 @@ export const GlobalCars = React.createContext();
 
 export const GlobalStorageCars = ({ children }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [refreshKey, setRefreshKey] = React.useState(0);
-
+  const [cars, setCars] = React.useState([]);
   return (
-    <GlobalCars.Provider
-      value={{ isOpen, setIsOpen, refreshKey, setRefreshKey }}
-    >
+    <GlobalCars.Provider value={{ isOpen, setIsOpen, cars, setCars }}>
       {children}
     </GlobalCars.Provider>
   );

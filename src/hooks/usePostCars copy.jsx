@@ -1,23 +1,22 @@
 import React from "react";
 import CarsServices from "../services/CarsServices";
-import { GlobalCars } from "../storage/GlobalCars";
 
 const usePostCar = () => {
-  // const { cars, setCars } = React.useContext(GlobalCars);
-  const [cars, setCars] = React.useState([]);
+  const [message, setMessage] = React.useState(false);
 
   const postCar = (car) => {
     return CarsServices.postCar(car)
       .then((response) => {
-        setCars(response.data);
-        console.log("chamou post");
+        setMessage(true);
+        return response;
       })
       .catch((error) => {
         console.error(`Ocorreu um erro: ${error}`);
+        setMessage(false);
       });
   };
 
-  return { postCar };
+  return { postCar, message, setMessage };
 };
 
 export default usePostCar;

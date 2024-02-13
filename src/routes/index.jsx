@@ -8,9 +8,8 @@ import Finance from "../pages/Finance/Finance";
 export const router = createBrowserRouter([
   {
     path: "/oncar",
-    element: <RootLayout />, //rota base da aplicação
+    element: <RootLayout />,
 
-    // Toas as rotas configuradas aqui são renderizadas no outlet
     children: [
       {
         path: "/oncar",

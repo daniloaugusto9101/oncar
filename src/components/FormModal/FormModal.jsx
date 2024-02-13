@@ -1,8 +1,12 @@
 import React from "react";
 import usePostCar from "../../hooks/usePostCars";
+import { GlobalCars } from "../../storage/GlobalCars";
+import useFetchCars from "../../hooks/useFetchCars";
 
 const FormModal = () => {
-  const { postCar, message, setMessage } = usePostCar();
+  const { postCar } = usePostCar();
+  const { fetchCars } = useFetchCars();
+  const { isOpen, setIsOpen } = React.useContext(GlobalCars);
 
   const [data, setData] = React.useState({
     img: "",
@@ -18,16 +22,21 @@ const FormModal = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const sendCar = async (e) => {
+  const sendCar = (e) => {
     e.preventDefault();
-    postCar(data);
-    setMessage("Carro cadastrado com sucesso!");
+    postCar(data)
+      .then(() => {
+        fetchCars();
+        setIsOpen(!isOpen);
+      })
+      .catch((error) => {
+        console.error(`Erro ao adicionar carro: ${error}`);
+      });
   };
 
   return (
     <form onSubmit={sendCar}>
       <div className="flex flex-col gap-4">
-        {message && "carro cadastrado com sucesso"}
         <div>
           <p className="mb-2">
             URL imagen
@@ -38,6 +47,7 @@ const FormModal = () => {
             name="img"
             className="w-full border p-2 bg-gray-100 rounded-sm"
             onChange={valorInput}
+            required={true}
           />
         </div>
         <div>
@@ -51,6 +61,7 @@ const FormModal = () => {
               name="modelo"
               className="w-full border p-2 bg-gray-100 rounded-sm"
               onChange={valorInput}
+              required={true}
             />
           </div>
           <p className="mb-2">
@@ -62,6 +73,7 @@ const FormModal = () => {
             name="marca"
             className="w-full border p-2 bg-gray-100 rounded-sm"
             onChange={valorInput}
+            required={true}
           />
         </div>
 
@@ -75,6 +87,7 @@ const FormModal = () => {
             name="ano"
             className="w-full border p-2 bg-gray-100 rounded-sm"
             onChange={valorInput}
+            required={true}
           />
         </div>
         <div className="flex gap-4">
@@ -88,6 +101,7 @@ const FormModal = () => {
               name="totkm"
               className="w-full border p-2 bg-gray-100 rounded-sm"
               onChange={valorInput}
+              required={true}
             />
           </div>
           <div>
@@ -100,6 +114,7 @@ const FormModal = () => {
               name="valor"
               className="w-full border p-2 bg-gray-100 rounded-sm"
               onChange={valorInput}
+              required={true}
             />
           </div>
         </div>
@@ -108,6 +123,7 @@ const FormModal = () => {
           name="descricao"
           onChange={valorInput}
           className="w-full border p-2 bg-gray-100 rounded-sm"
+          required={true}
         /> */}
         <button
           type="submit"
