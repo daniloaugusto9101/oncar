@@ -24,7 +24,7 @@ const HomeBody = () => {
           <BtnAdd />
         </nav>
         <div className="">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-4 gap-y-8">
             {cars && <CarList cars={cars} />}
           </div>
         </div>

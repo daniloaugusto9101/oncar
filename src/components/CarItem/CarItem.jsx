@@ -14,7 +14,7 @@ const CarItem = ({ car }) => {
         />
       </div>
       <div>
-        <div className="p-4 flex flex-col gap-2">
+        <div className="p-4 min-h-40 flex flex-col gap-2">
           <p className="text-2xl">{car.modelo}</p>
           <p>{car.marca}</p>
           <div className="flex gap-5">
@@ -31,7 +31,7 @@ const CarItem = ({ car }) => {
         <div className="flex justify-between items-center bg-gray-100 p-4 border-t-2">
           <p>
             R$
-            <span className="text-2xl text-blue-600 font-bold">
+            <span className="ml-2 text-2xl text-blue-600 font-bold">
               {car.valor}
             </span>
           </p>
