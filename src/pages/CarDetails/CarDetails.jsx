@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFethCarDetails from "../../hooks/useFethCarDetails";
-import BtnDeleteCar from "../../components/BtnDeleteCar";
 import Btnfinance from "../../components/Btnfinance";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdSpeedometer } from "react-icons/io";
@@ -20,9 +19,6 @@ const CarDetails = () => {
           />
         </div>
         <div className="p-4 basis-1/2">
-          <div className="flex gap-2">
-            <BtnDeleteCar carId={carId} />
-          </div>
           <div className="flex flex-col gap-2 mt-4">
             <p className="text-2xl">{car.modelo}</p>
             <p>{car.marca}</p>

@@ -2,6 +2,7 @@ import React from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdSpeedometer } from "react-icons/io";
 import { Link } from "react-router-dom";
+import BtnDelete from "../BtnDelete";
 
 const CarItem = ({ car }) => {
   return (
@@ -34,12 +35,15 @@ const CarItem = ({ car }) => {
               {car.valor}
             </span>
           </p>
-          <Link
-            to={`/oncar/car/${car.id}`}
-            className="font-semibold text-sm text-blue-600 border border-blue-600 px-3 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all "
-          >
-            Ver mais
-          </Link>
+          <div className="flex gap-2">
+            <BtnDelete carId={car.id} />
+            <Link
+              to={`/oncar/car/${car.id}`}
+              className=" flex items-center font-semibold text-sm text-blue-600 border border-blue-600 px-3 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-all "
+            >
+              Ver mais
+            </Link>
+          </div>
         </div>
       </div>
     </div>
