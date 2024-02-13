@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Este é um proejto para gestão de veículos, podendo visualizar, ver detalhes e excluir
+Este é um projeto para gestão de veículos, podendo visualizar, ver detalhes e excluir
 
 ## Intalação
 
