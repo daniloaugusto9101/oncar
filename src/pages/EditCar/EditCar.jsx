@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import EditCarForm from '../../components/EditCarForm/EditCarForm'; // Nome do novo componente de formulário de edição
 import CarsServices from '../../services/CarsServices';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const EditCar = () => {
     const { carId } = useParams();
     const [carData, setCarData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchCarData = async () => {
@@ -29,6 +31,7 @@ const EditCar = () => {
         try {
             const response = await CarsServices.editCar(carId, updatedCarData);
             console.log('Carro editado com sucesso:', response.data);
+            navigate('/oncar');
         } catch (error) {
             console.error('Erro ao editar o carro:', error);
         }
@@ -51,7 +54,7 @@ const EditCar = () => {
                 <EditCarForm
                     initialCarData={carData}
                     onSubmit={handleEditCar}
-                    buttonText="Editar Carro"
+                    buttonText="Salvar Alteração"
                 />
             )}
         </div>
